@@ -4,3 +4,7 @@ PasswordAutehtication yes
 pubKeyAuthentication no
 sudo service ssh restart
 sudo paasswd $USER
+
+
+sudo usermod -aG docker $USER
+newgrp docker
