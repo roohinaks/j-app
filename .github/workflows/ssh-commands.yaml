@@ -23,6 +23,6 @@ jobs:
            docker rm jen
            pwd
            ls -la
-           docker build -t jen .
+           docker build -t /home/ubuntu/j-app/jen .
            docker run --name jen -d -p 8000:8000 jen
            
