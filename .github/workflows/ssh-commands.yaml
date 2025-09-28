@@ -60,16 +60,17 @@ jobs:
           tags: ${{ steps.meta.outputs.tags}}
           labels: ${{ steps.meta.outputs.labels}}
       
-      - name: Deploy
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.EC2_HOST}}
-          port: ${{ secrets.EC2_PORT}}
-          username: ${{ secrets.EC2_USERNAME}}
-          password: ${{ secrets.EC2_PASSWORD}}
-          script: |
-            docker stop actions-jenkins
-            docker rm actions-jenkins
-            docker pull roohinaks/actions-jenkins:master
-            docker run --name actions-jenkins -d -p 8000:8000 roohinaks/actions-jenkins:master
+      # - name: Deploy
+      #   uses: appleboy/ssh-action@v1
+      #   with:
+      #     host: ${{ secrets.EC2_HOST}}
+      #     port: ${{ secrets.EC2_PORT}}
+      #     username: ${{ secrets.EC2_USERNAME}}
+      #     password: ${{ secrets.EC2_PASSWORD}}
+      #     script: |
+      #       docker stop actions-jenkins
+      #       docker rm actions-jenkins
+      #       docker pull roohinaks/actions-jenkins:master
+      #       docker run --name actions-jenkins -d -p 8000:8000 roohinaks/actions-jenkins:master
 
+  
