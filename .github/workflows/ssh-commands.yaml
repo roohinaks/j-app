@@ -14,8 +14,8 @@ jobs:
      - name: executing remote ssh commands using passward
        uses: appleboy/ssh-action@v1
        with:
-         host: ${{ secretes.HOST}}
-         username: ${{ secretes.USERNAME}}
-         password: ${{ secretes.PASSWORD}}
-         port: ${{ secretes.PORT}}
+         host: ${{ secrets.HOST}}
+         username: ${{ secrets.USERNAME}}
+         password: ${{ secrets.PASSWORD}}
+         port: ${{ secrets.PORT}}
          script: whoami
