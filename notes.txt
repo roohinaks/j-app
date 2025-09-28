@@ -1,0 +1,6 @@
+vim /etc/ssh/sshd_config
+PermitRootLogin yes
+PasswordAutehtication yes
+pubKeyAuthentication no
+sudo service ssh restart
+sudo paasswd $USER

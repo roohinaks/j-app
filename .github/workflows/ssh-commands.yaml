@@ -1,0 +1,21 @@
+name: remote ssh commands
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+   name: build
+   runs-on: ubuntu-latest
+
+   steps:
+     - name: executing remote ssh commands using passward
+       uses: appleboy/ssh-action@v1
+       with:
+         host: ${{ secretes.HOST}}
+         username: ${{ secretes.USERNAME}}
+         password: ${{ secretes.PASSWORD}}
+         port: ${{ secretes.PORT}}
+         script: whoami
