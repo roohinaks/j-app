@@ -70,5 +70,6 @@ jobs:
           script: |
             docker stop actions-jenkins
             docker rm actions-jenkins
-            docker run --name actions-jenkins -d -p 8000:8000 docker.io/roohinaks/actions-jenkins:master
+            docker pull roohinaks/actions-jenkins:master
+            docker run --name actions-jenkins -d -p 8000:8000 roohinaks/actions-jenkins:master
 
