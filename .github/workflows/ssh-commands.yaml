@@ -19,10 +19,9 @@ jobs:
          password: ${{ secrets.PASSWORD}}
          port: ${{ secrets.PORT}}
          script: |
+           cd j-app 
            docker stop jen
            docker rm jen
-           pwd
-           ls -la
-           docker build -f /home/ubuntu/j-app/Dockerfile -t jen .
+           docker build -t jen .
            docker run --name jen -d -p 8000:8000 jen
            
