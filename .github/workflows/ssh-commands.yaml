@@ -18,4 +18,9 @@ jobs:
          username: ${{ secrets.USERNAME}}
          password: ${{ secrets.PASSWORD}}
          port: ${{ secrets.PORT}}
-         script: whoami
+         script: |
+           docker stop jen
+           docker rm jen
+           docker build -t jen .
+           docker run --name jen -d -p 8000:8000 jen
+           
